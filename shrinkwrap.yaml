@@ -1,5 +1,6 @@
 dependencies:
   angular: 1.6.9
+  angular2: 2.0.0-beta.21
   cors: 2.8.4
   express: 4.16.3
   mongoose: 5.0.11
@@ -22,6 +23,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6igWH2GIsxV+J38wNWCh8oyjaZsrIPIDO35twloIUyjlF2Yit6UyLAWujHP05ma/LFxTsx4NtYibRoMNBXPR1A==
+  /angular2/2.0.0-beta.21:
+    deprecated: This version of Angular has been deprecated. Use @angular/core instead.
+    dev: false
+    peerDependencies:
+      es6-shim: ^0.35.0
+      reflect-metadata: 0.1.2
+      rxjs: 5.0.0-beta.6
+      zone.js: ^0.6.12
+    resolution:
+      integrity: sha1-eGQ+WQZBUmolltzR1cyjpVCe120=
   /ansi-align/2.0.0:
     dependencies:
       string-width: 2.1.1
@@ -2020,6 +2031,7 @@ shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
   angular: ^1.6.9
+  angular2: ^2.0.0-beta.21
   cors: ^2.8.4
   express: ^4.16.3
   mongoose: ^5.0.11
