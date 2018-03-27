@@ -6,6 +6,7 @@ const express = require('express')
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const shortUrl = require("./models/shortUrl")
 
 const app = express()
 app.use(bodyParser.json())
@@ -21,7 +22,7 @@ app.use(express.static(__dirname + 'public'))
 app.get("/:urlToShorten(*)", (request, response, next) => {
   var { urlToShorten } = request.params;
   
-  response.sendFile(__dirname + '/views/index.html')
+  response.json({urlToShorten});
 })
  
 
