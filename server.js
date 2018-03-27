@@ -10,7 +10,10 @@ const shortUrl = require("./models/shortUrl")
 
 const app = express()
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors()) 
+
+//connect to database
+mongoose.connect(process.env.MONGODB_URI);
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
