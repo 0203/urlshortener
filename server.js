@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/views'))
 app.get("/:urlToShorten(*)", (request, response, next) => {
   var { urlToShorten } = request.params;
   
-  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b
+  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   
   response.json({urlToShorten});
 })
