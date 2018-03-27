@@ -5,7 +5,6 @@
 const express = require('express')
 const bodyParser = require("body-parser")
 const cors = require("cors")
-const useragent = require("express-useragent");
 
 const app = express()
 app.use(bodyParser.json())
@@ -15,7 +14,7 @@ app.use(cors())
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'))
+app.use(express.static(__dirname + 'public'))
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:urlToShorten(*)", (request, response, next) => {
