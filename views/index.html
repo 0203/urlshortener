@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/style.css">
     <script type="text/javascript" src="client.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -33,13 +34,15 @@
         URL Shortener Microservice
       </h2>
     </header>
+{{UrlToShorten}}
+     <div ng-app="shortUrlApp">
+      <section>
+     
+      <input  placeholder="Enter URL"  id="text" ng-model="urlToShorten" >
+      
+      <a class="btn btn-primary" ng-href="/new/{{urlToShorten}}"> Click Here</a>
+    </section>
 
-    <div ng-app="shortUlrApp">
-      <p>Please enter your URL link here:</p>
-      <section ng-controller="shortAppCtrl">
-        <input type="text" maxlength="100" placeholder="Enter URL" ng-model="urlToShorten">
-        <a class="btn btn-primary" ng-href="/{{urlToShorten}}">Submit</a>
-      </section>
     </div>
 
     <footer>
