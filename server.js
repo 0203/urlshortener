@@ -19,15 +19,20 @@ mongoose.connect(process.env.MONGODB_URI);
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static(__dirname + '/views'))
+app.use(express.static(__dirname + 'public'))
+
+// http://expressjs.com/en/starter/basic-routing.html
+app.get("/", (request, response) => {
+  response.sendFile(__dirname + '/views/index.html')
+})
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:urlToShorten(*)", (request, response, next) => {
-  var { urlToShorten } = request.params;
+  var urlToShorten = request.params.urlToShorten;
   
   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   
-  response.json({urlToShorten});
+  return response.json({urlToShorten});
 })
  
 
