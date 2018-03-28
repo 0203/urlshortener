@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
     <script type="text/javascript" src="client.js"></script> 
     
     
@@ -40,8 +40,8 @@
 
      <div ng-app="shortUrlApp">
       <section>
-     {{UrlToShorten}}
-      <input  placeholder="Enter URL"  id="text" ng-model="urlToShorten" >
+     {{urlToShorten}}
+      <input  placeholder="Enter URL"  id="text" ng-model="urlToShorten">
       
       <a class="btn btn-primary" ng-href="/new/{{urlToShorten}}"> Click Here</a>
     </section>

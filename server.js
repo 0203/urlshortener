@@ -9,6 +9,7 @@ const mongoose = require("mongoose")
 const shortUrl = require("./models/shortUrl")
 
 const app = express()
+app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(cors()) 
 
@@ -27,7 +28,7 @@ app.get("/", (request, response) => {
 })
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/:urlToShorten(*)", (request, response, next) => {
+app.get("/new/:urlToShorten(*)", (request, response, next) => {
   var urlToShorten = request.params.urlToShorten;
   
   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
