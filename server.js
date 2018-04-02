@@ -7,14 +7,15 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const app = express();
-const shortUrl = require("./model/shortUrl")
+const shortUrl = require("./models/shortUrl")
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(cors());
 
+
 //Connet to database
-mongoose.connect("mongodb://ammar:1111@ds121999.mlab.com:21999/apitest").then(
+mongoose.connect("mongodb://izra:uniklmiit15@ds123129.mlab.com:23129/jomapi").then(
   () => { console.log("connected") },
   err => { console.log(err) }
 );
@@ -89,4 +90,5 @@ shortUrl.findOne({'shorterUrl': shorterUrl},function(err,data)
 const listener = app.listen(process.env.PORT, () => {
   console.log(`Your app is listening on port ${listener.address().port}`)
 })
+
 
